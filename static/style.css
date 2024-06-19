@@ -1,0 +1,127 @@
+@font-face {
+
+    font-family: "F1";
+    src: url("fonts/Formula1-Bold_web_0.ttf") format("ttf");
+}
+body {
+    font-family: "F1", sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    color: black;
+    cursor: default;
+    transition: color 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #333;
+}
+
+p {
+    color: black;
+    cursor: default;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.card li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.search input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.search button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.card select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+#driver-search-results,
+#news {
+    font-style: italic;
+    color: black;
+}
+
+.social ul {
+    margin: 0;
+    padding: 0;
+}
+
+.social li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.left {
+    order: 0;
+}
+
+.center {
+    order: 1;
+}
+
+.right {
+    order: 2;
+}

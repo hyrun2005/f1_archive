@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Archive</title>
+    <style>
+        @font-face {
+            font-family: 'formula1-display-bold';
+            src: url('{{ url_for('static', filename='fonts/Formula1-Bold.otf') }}') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'formula1-display-wide';
+            src: url('{{ url_for('static', filename='fonts/Formula1-Wide.otf') }}') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'formula1-display-regular';
+            src: url('{{ url_for('static', filename='fonts/Formula1-Regular.otf') }}') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'formula1-display-wide', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            text-align: center;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .site-name {
+            font-family: 'formula1-display-wide', sans-serif;
+            font-size: 3.5em;
+            font-weight: bold;
+            color: white;
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.5s;  /* Smooth transition for color change */
+        }
+
+        nav a:hover {
+            color: black;  /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="site-name">F1 Archive</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Races</a>
+            <a href="{{ url_for('get_drivers') }}">Drivers</a>
+            <a href="#">Constructors</a>
+            <a href="#">Seasons</a>
+            <a href="#">Standings</a>
+        </nav>
+    </div>
+</body>
+</html>

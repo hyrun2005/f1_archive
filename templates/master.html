@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        @font-face {
+            font-family: 'formula1-display-bold';
+            src: url('{{ url_for('static', filename='fonts/Formula1-Bold.otf') }}') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'formula1-display-wide';
+            src: url('{{ url_for('static', filename='fonts/Formula1-Wide.otf') }}') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'formula1-display-regular';
+            src: url('{{ url_for('static', filename='fonts/Formula1-Regular.otf') }}') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'formula1-display-regular', sans-serif;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .site-name {
+            font-size: 3em;
+            font-weight: bold;
+            color: red;
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: red;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.5s;
+        }
+
+        nav a:hover {
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+        <h1 class="site-name">F1 Archive - Drivers</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Races</a>
+            <a href="#">Drivers</a>
+            <a href="#">Constructors</a>
+            <a href="#">Seasons</a>
+        </nav>
+{% block content %}
+{% endblock %}
+</div>
+</body>
