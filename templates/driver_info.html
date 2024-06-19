@@ -1,0 +1,79 @@
+{% extends 'master.html' %}
+{% block title %}Info{% endblock %}
+
+{% block content %}
+<style>
+    .driver-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    .driver-photo {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .driver-photo img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .driver-details {
+        flex: 2;
+    }
+
+    .driver-details div {
+        margin-bottom: 10px;
+    }
+
+    .driver-details .name {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: red;
+    }
+
+    .driver-details .number {
+        font-size: 1.2em;
+    }
+
+    .driver-details .team {
+        font-size: 1.2em;
+    }
+
+    .driver-details .country {
+        font-size: 1.2em;
+    }
+</style>
+{% if driver == [] %}
+    <div class="driver-container">
+    <div class="driver-photo">
+        <img src="{{ url_for('static', filename='drivers_photo/undefined.jpg') }}">
+    </div>
+    <div class="driver-details">
+        <div>Driver is not in Formula 1</div>
+    </div>
+    {% else %}
+    {% for i in driver %}
+<div class="driver-container">
+    <div class="driver-photo">
+        <img src="{{ url_for('static', filename='drivers_photo/' + i.first_name +"_"+ i.last_name + '.jpg') }}">
+    </div>
+    <div class="driver-details">
+        <div class="name">{{ i.full_name }} ({{ i.name_acronym }})</div>
+        <div class="number">Number: {{ i.driver_number }}</div>
+        <div class="team">Team: {{ i.team_name }}</div>
+        <div class="country">Country: {{ i.country_code }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+</div>
+{% endblock %}

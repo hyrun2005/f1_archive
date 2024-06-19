@@ -81,10 +81,9 @@
                 <img src="{{ url_for('static', filename='drivers_photo/' + driver.givenName + '_' + driver.familyName + '.jpg') }}"
                      alt="{{ driver.givenName }} {{ driver.familyName }}"
                      onerror="this.onerror=null;this.src='{{ url_for('static', filename='drivers_photo/undefined.png') }}';">
-                <h3>{{ driver.givenName }}</h3>
-                <div name="drivers_surname">{{ driver.familyName }}</div>
-                <p>Team: {{ driver.team }}<br>Nationality: {{ driver.nationality }}</p>
-            <<a class="more-info-link" href="{{ url_for('driver_details', name=driver['familyName']) }}">More info</a>
+                <h3>{{ driver.givenName }} {{ driver.familyName }}</h3>
+                <p>Team: <br>Nationality: {{ driver.nationality }}</p>
+            <a class="more-info-link" href="{{ url_for('more_info', number=driver['permanentNumber']) }}">More info</a>
             </div>
             {% endfor %}
         </div>
