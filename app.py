@@ -5,9 +5,6 @@ app = Flask(__name__)
 
 ERGAST_API_URL = "http://ergast.com/api/f1"
 
-@app.route('/')
-def home():
-    return render_template('index.html')
 @app.route('/drivers', methods=['GET', 'POST'])
 def get_drivers():
     def_year = '2024'
@@ -30,7 +27,6 @@ def more_info(famName):
         return render_template('drivers.html', drivers=drivers, current_year=year)
     else:
         return f"Error fetching data: {response.status_code}"
-
 
 
 @app.route('/main_page')
